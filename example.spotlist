@@ -1,0 +1,16 @@
+[playlist]
+name = Kids Party 2025
+description = Party playlist — all segments
+
+[segment: Pre-Party Rock]
+duration_target = 60min
+
+- Johnny B. Goode | Chuck Berry
+- Rock Around the Clock | Bill Haley & His Comets
+- He's a Pirate | Klaus Badelt
+
+[segment: Wind Down]
+duration_target = 20min
+
+- What a Wonderful World | Louis Armstrong
+- Here Comes the Sun | The Beatles
