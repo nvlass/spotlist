@@ -2,6 +2,7 @@ import base64
 import hashlib
 import http.server
 import json
+import logging
 import os
 import secrets
 import threading
@@ -10,7 +11,9 @@ import webbrowser
 
 import requests
 
-REDIRECT_URI = "http://localhost:8888/callback"
+logger = logging.getLogger(__name__)
+
+REDIRECT_URI = "http://127.0.0.1:8888/callback"
 AUTH_URL = "https://accounts.spotify.com/authorize"
 TOKEN_URL = "https://accounts.spotify.com/api/token"
 SCOPES = "playlist-modify-public playlist-modify-private"
@@ -128,9 +131,9 @@ def authenticate() -> SpotifySession:
     verifier, challenge = _generate_pkce_pair()
     auth_url = _build_auth_url(client_id, challenge)
 
-    print("Opening Spotify login in your browser…")
+    logger.info("Opening Spotify login in your browser…")
     webbrowser.open(auth_url)
-    print("Waiting for callback on http://localhost:8888/callback …")
+    logger.info("Waiting for callback on http://127.0.0.1:8888/callback …")
 
     code = _wait_for_callback()
     token_data = _exchange_code(client_id, code, verifier)

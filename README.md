@@ -25,7 +25,7 @@ The access token lives in memory only and is discarded when the process exits.
 1. Go to <https://developer.spotify.com/dashboard> and log in.
 2. Click **Create app**.
 3. Fill in any name and description.
-4. Set **Redirect URI** to exactly: `http://localhost:8888/callback`
+4. Set **Redirect URI** to exactly: `http://127.0.0.1:8888/callback`
 5. Save. Copy the **Client ID** from the app overview page.
 
 ### 2. Configure your environment
